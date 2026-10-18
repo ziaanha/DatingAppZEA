@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZEA — Discover Your People</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="logo" href="#" aria-label="ZEA home"><span>Z</span> ZEA<small>.</small></a>
+
+    <p class="sidebar-label">YOUR SPACE</p>
+    <nav>
+      <button class="nav-link active" data-page="discover"><span>♡</span> Discover</button>
+      <button class="nav-link" data-page="matches"><span>♡</span> Matches <b id="matchCount">0</b></button>
+      <button class="nav-link" data-page="messages"><span>▤</span> Messages</button>
+      <button class="nav-link" data-page="profile"><span>◎</span> My profile</button>
+    </nav>
+
+    <div class="sidebar-note">
+      <span>♡</span>
+      <p>Good connections start with being yourself.</p>
+    </div>
+    <footer>ZEA © 2026 · Demo app</footer>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <span class="eyebrow">A LITTLE SPACE FOR CONNECTION</span>
+        <h1 id="pageTitle">Discover your people</h1>
+      </div>
+      <div class="topbar-right">
+        <span class="demo-status">DEMO MODE</span>
+        <div class="avatar">Z</div>
+      </div>
+    </header>
+
+    <section id="discoverPage">
+      <div class="toolbar">
+        <label class="search-box">
+          <span>⌕</span>
+          <input id="searchInput" type="search" placeholder="Search people or interests...">
+        </label>
+        <div class="categories" id="categories">
+          <button class="active" data-category="All">All vibes</button>
+          <button data-category="Art">Art & creativity</button>
+          <button data-category="Music">Music</button>
+          <button data-category="Books">Books</button>
+          <button data-category="Travel">Adventure</button>
+        </div>
+      </div>
+
+      <div class="section-heading">
+        <div>
+          <h2>People you might like <span>♡</span></h2>
+          <p>Little things can lead to lovely conversations.</p>
+        </div>
+        <span id="resultsCount"></span>
+      </div>
+
+      <section class="profiles" id="profiles" aria-live="polite"></section>
+    </section>
+
+    <section id="otherPage" hidden>
+      <div class="other-content" id="otherContent"></div>
+    </section>
+  </main>
+
+  <button class="floating-button" id="addProfile" aria-label="Add a profile">+</button>
+
+  <dialog id="profileDialog">
+    <form id="profileForm">
+      <div class="dialog-heading">
+        <div>
+          <span class="eyebrow">YOUR LITTLE INTRODUCTION</span>
+          <h2>Create a profile</h2>
+        </div>
+        <button type="button" class="close-button" id="closeDialog">×</button>
+      </div>
+
+      <label>Your name
+        <input name="name" required maxlength="30" placeholder="e.g. Jamie">
+      </label>
+
+      <label>Short bio
+        <textarea name="bio" required maxlength="120" placeholder="A little about you..."></textarea>
+      </label>
+
+      <label>Photo URL
+        <input name="photo" type="url" placeholder="https://example.com/photo.jpg">
+      </label>
+
+      <label>Choose your vibe
+        <select name="category">
+          <option>Art</option>
+          <option>Music</option>
+          <option>Books</option>
+          <option>Travel</option>
+        </select>
+      </label>
+
+      <button class="primary-button" type="submit">Add profile ♡</button>
+    </form>
+  </dialog>
+
+  <dialog id="messageDialog">
+    <div class="dialog-heading">
+      <h2 id="messageTitle">A little hello</h2>
+      <button class="close-button" id="closeMessage" aria-label="Close">×</button>
+    </div>
+    <p id="messageDescription"></p>
+    <form id="messageForm">
+      <textarea id="messageText" required maxlength="300" placeholder="Write a friendly message..."></textarea>
+      <button class="primary-button" type="submit">Send message ♡</button>
+    </form>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
